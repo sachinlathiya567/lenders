@@ -35,6 +35,18 @@
             "phone": "23456876",
             "password": "password4"
         }
+    ],
 
+    "transactions": [
+        {
+            "id": "1234",
+            "lender": "123456",
+            "borrower": "123456",
+            "type": "Lendes",
+            "amount": 2000,
+            "date": "",
+            "reason": "Awesome Reason",
+            "status": "paid"
+        }
     ]
 }
