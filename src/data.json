@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "id": "123456",
+            "name": "Don Joe",
+            "email": "donjoe@mail.com",
+            "phone": "098765432",
+            "password": "password"
+        },
+        {
+            "id": "123456",
+            "name": "Susan Young",
+            "email": "sussy@mail.com",
+            "phone": "86754323",
+            "password": "password1"
+        },
+        {
+            "id": "123456",
+            "name": "Don Joe",
+            "email": "june@mail.com",
+            "phone": "324354623",
+            "password": "password2"
+        },
+        {
+            "id": "123456",
+            "name": "Don Joe",
+            "email": "arya@mail.com",
+            "phone": "0986345623",
+            "password": "password3"
+        },
+        {
+            "id": "123456",
+            "name": "Don Joe",
+            "email": "simpleuser@mail.com",
+            "phone": "23456876",
+            "password": "password4"
+        }
+
+    ]
+}
