@@ -1,12 +1,17 @@
 
-
 <script setup>
+import data from "../data.json";
+const user = localStorage.getItem("authUser");
+let authUser;
+if (user) {
+  authUser = JSON.parse(user);
+}
 </script>
 
 <template>
   <div class="container my-5">
-    <a href="" class="btn btn-primary my-3">
-      <i class="fa fa-chevron-left mr-2"></i> Transactions</a
+    <router-link to="/home/transactions" class="btn btn-primary my-3">
+      <i class="fa fa-chevron-left mr-2"></i> Transactions</router-link
     >
     <h1 class="display-4">New Transaction</h1>
 

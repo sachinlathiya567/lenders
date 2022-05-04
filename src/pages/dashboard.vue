@@ -16,18 +16,16 @@ const myTransactions = transactions.filter((t) =>
     : false
 );
 
-let lendsTotal = 0
-let borrowsTotal = 0
+let lendsTotal = 0;
+let borrowsTotal = 0;
 transactions.forEach((t) => {
   if (t?.lender?.id == authUser?.id) {
-    lendsTotal += t.amount
+    lendsTotal += t.amount;
   }
   if (t?.borrower?.id == authUser?.id) {
-    borrowsTotal += t.amount
+    borrowsTotal += t.amount;
   }
 });
-
-
 </script>
 
 <template>
@@ -41,7 +39,7 @@ transactions.forEach((t) => {
         <div class="col-md-3">
           <div class="card-counter primary">
             <i class="fa fa-code-fork"></i>
-            <span class="count-numbers">{{lendsTotal - borrowsTotal}}</span>
+            <span class="count-numbers">{{ lendsTotal - borrowsTotal }}</span>
             <span class="count-name">Balance</span>
           </div>
         </div>
@@ -49,7 +47,7 @@ transactions.forEach((t) => {
         <div class="col-md-3">
           <div class="card-counter danger">
             <i class="fa fa-ticket"></i>
-            <span class="count-numbers">{{borrowsTotal}}</span>
+            <span class="count-numbers">{{ borrowsTotal }}</span>
             <span class="count-name">Borrowed</span>
           </div>
         </div>
@@ -57,7 +55,7 @@ transactions.forEach((t) => {
         <div class="col-md-3">
           <div class="card-counter success">
             <i class="fa fa-database"></i>
-            <span class="count-numbers">{{lendsTotal}}</span>
+            <span class="count-numbers">{{ lendsTotal }}</span>
             <span class="count-name">Lend</span>
           </div>
         </div>
@@ -65,7 +63,7 @@ transactions.forEach((t) => {
         <div class="col-md-3">
           <div class="card-counter info">
             <i class="fa fa-users"></i>
-            <span class="count-numbers">{{myTransactions?.length}}</span>
+            <span class="count-numbers">{{ myTransactions?.length }}</span>
             <span class="count-name">Transactions</span>
           </div>
         </div>

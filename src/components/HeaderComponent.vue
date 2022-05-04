@@ -61,7 +61,7 @@ function logout() {
       </li> -->
           </ul>
           <div class="form-inline my-2 my-lg-0">
-            <router-link class="btn btn-primary mr-2 my-2 my-sm-0" to="/login">
+            <router-link class="btn btn-primary mr-2 my-2 my-sm-0" to="/home">
               {{ authUser?.name || "" }}
             </router-link>
 

@@ -89,7 +89,7 @@
             "amount": 500,
             "date": "",
             "reason": "Awesome Reason",
-            "status": "paid"
+            "status": "unpaid"
         }
     ]
 }
