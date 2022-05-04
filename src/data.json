@@ -65,7 +65,7 @@
             },
             "type": "Lends",
             "amount": 1000,
-            "date": "",
+            "date": "Wed May 04 2022 03:00:00 GMT+0300 (East Africa Time)",
             "reason": "Awesome Reason",
             "status": "paid"
         },
@@ -87,7 +87,7 @@
             },
             "type": "Borrows",
             "amount": 500,
-            "date": "",
+            "date": "Wed May 04 2022 03:00:00 GMT+0300 (East Africa Time)",
             "reason": "Awesome Reason",
             "status": "unpaid"
         }

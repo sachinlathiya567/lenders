@@ -19,20 +19,53 @@ const search = ref("");
 const type = ref("");
 const date = ref("");
 
-function lowecaseString(data) {
-  return JSON.stringify(data).toLowerCase();
-}
+
+
 
 function handleSearch() {
   if (!!search?.value) {
-    console.log("search", search.value);
-    console.log("allTransactions.value", allTransactions.value);
+    
+    let data = myTransactions.filter(t => {
+        let tString = JSON.stringify(t).toLowerCase()
+
+        let searchString = JSON.stringify(search.value).toLowerCase()
+
+        return tString.includes(searchString)
+
+    })
+
+    allTransactions.value = data
+
+    console.log("allTransactions", allTransactions.value);
   } else {
     allTransactions.value = myTransactions;
   }
 }
 
-function handleFilter() {}
+function handleFilterbyType() {
+
+    let data = myTransactions.filter(t => {
+        return t.type === type.value
+    })
+
+    allTransactions.value = data
+}
+
+
+function handleFilterbyDate() {
+    let data = myTransactions.filter(t => {
+        let fulldate = new Date(t.date).getTime()
+
+        let newfulldate = new Date(date.value).getTime()
+
+        console.log("sd", fulldate === newfulldate);
+
+        return fulldate === newfulldate
+    })
+
+    allTransactions.value = data
+
+}
 </script>
 
 <template>
@@ -70,7 +103,7 @@ function handleFilter() {}
                 class="form-control"
                 v-model="type"
                 placeholder="Type"
-                @change="handleFilter"
+                @change="handleFilterbyType"
               >
                 <option value="Borrows">Borrows</option>
                 <option value="Lends">Lends</option>
@@ -83,7 +116,7 @@ function handleFilter() {}
                 class="form-control"
                 v-model="date"
                 placeholder="Date"
-                @input="handleFilter"
+                @input="handleFilterbyDate"
               />
             </div>
           </div>
