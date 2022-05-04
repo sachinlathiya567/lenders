@@ -1,6 +1,17 @@
 
 
 <script setup>
+const user = localStorage.getItem("authUser");
+let authUser;
+if (user) {
+  authUser = JSON.parse(user);
+}
+
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("authUser");
+  document.location.href = "/#/login/";
+}
 </script>
 
 <template>
@@ -50,9 +61,13 @@
       </li> -->
           </ul>
           <div class="form-inline my-2 my-lg-0">
-            <router-link class="btn btn-outline-light my-2 my-sm-0" to="/login">
-              Logout
+            <router-link class="btn btn-primary mr-2 my-2 my-sm-0" to="/login">
+              {{ authUser?.name || "" }}
             </router-link>
+
+            <button class="btn btn-outline-light my-2 my-sm-0" @click="logout">
+              Logout
+            </button>
           </div>
         </div>
       </div>

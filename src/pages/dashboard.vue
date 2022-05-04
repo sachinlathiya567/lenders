@@ -1,6 +1,12 @@
 
 
 <script setup>
+const user = localStorage.getItem("authUser")
+let authUser
+if (user) {
+    authUser = JSON.parse(user)
+}
+
 </script>
 
 <template>
@@ -9,7 +15,7 @@
       <div class="row">
         <div class="col-12">
           <h5>Dashboard</h5>
-          <h2 class="display-4">Welcome</h2>
+          <h2 class="display-4">Welcome, {{authUser?.name || ''}}</h2>
         </div>
         <div class="col-md-3">
           <div class="card-counter primary">
