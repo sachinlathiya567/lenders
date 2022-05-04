@@ -3,10 +3,11 @@ import Transactions from "../pages/transactions.vue";
 import Dashboard from "../pages/dashboard.vue";
 import NewTransaction from "../pages/new-transaction.vue";
 import Home from "../Home.vue";
+import Fourohfour from "../pages/404.vue"
 
 
 const routes = [
-   
+
     {
         name: "Login",
         path: "/login",
@@ -40,6 +41,15 @@ const routes = [
             },
         ]
     },
+
+    {
+        path: "/404",
+        name: "404",
+        component: Fourohfour,
+        meta: {
+            title: "404 Not Found",
+        },
+    }
 ]
 
 export default routes
