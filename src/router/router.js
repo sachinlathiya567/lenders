@@ -19,9 +19,9 @@ router.beforeEach((to, from) => {
         }
     }
 
-    let authUser = localStorage.getItem("auth")
+    var authUser = localStorage.getItem("auth")
     authUser = JSON.parse(authUser)
-    let isLoggedIn = localStorage.getItem("isLoggedIn")
+    var isLoggedIn = localStorage.getItem("isLoggedIn")
     isLoggedIn = JSON.parse(isLoggedIn)
     // instead of having to check every route record with
     // to.matched.some(record => record.meta.requiresAuth)
@@ -33,6 +33,14 @@ router.beforeEach((to, from) => {
             // save the location we were at to come back later
             query: { redirect: to.fullPath },
         }
+    } else if (to.meta.guest) {
+        // if logged in and the login page is visited, go to home page
+        if (isLoggedIn && authUser) {
+            console.log("dang it");
+            return {
+                path: '/home',
+            }
+        } 
     }
 })
 

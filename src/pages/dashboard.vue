@@ -1,11 +1,32 @@
 
 
 <script setup>
-const user = localStorage.getItem("authUser")
-let authUser
+import data from "../data.json";
+const user = localStorage.getItem("authUser");
+let authUser;
 if (user) {
-    authUser = JSON.parse(user)
+  authUser = JSON.parse(user);
 }
+
+const transactions = data.transactions;
+
+const myTransactions = transactions.filter((t) =>
+  t?.lender?.id == authUser?.id || t?.borrower?.id == authUser?.id
+    ? true
+    : false
+);
+
+let lendsTotal = 0
+let borrowsTotal = 0
+transactions.forEach((t) => {
+  if (t?.lender?.id == authUser?.id) {
+    lendsTotal += t.amount
+  }
+  if (t?.borrower?.id == authUser?.id) {
+    borrowsTotal += t.amount
+  }
+});
+
 
 </script>
 
@@ -15,12 +36,12 @@ if (user) {
       <div class="row">
         <div class="col-12">
           <h5>Dashboard</h5>
-          <h2 class="display-4">Welcome, {{authUser?.name || ''}}</h2>
+          <h2 class="display-4">Welcome, {{ authUser?.name || "" }}</h2>
         </div>
         <div class="col-md-3">
           <div class="card-counter primary">
             <i class="fa fa-code-fork"></i>
-            <span class="count-numbers">1200</span>
+            <span class="count-numbers">{{lendsTotal - borrowsTotal}}</span>
             <span class="count-name">Balance</span>
           </div>
         </div>
@@ -28,7 +49,7 @@ if (user) {
         <div class="col-md-3">
           <div class="card-counter danger">
             <i class="fa fa-ticket"></i>
-            <span class="count-numbers">-200</span>
+            <span class="count-numbers">{{borrowsTotal}}</span>
             <span class="count-name">Borrowed</span>
           </div>
         </div>
@@ -36,7 +57,7 @@ if (user) {
         <div class="col-md-3">
           <div class="card-counter success">
             <i class="fa fa-database"></i>
-            <span class="count-numbers">0</span>
+            <span class="count-numbers">{{lendsTotal}}</span>
             <span class="count-name">Lend</span>
           </div>
         </div>
@@ -44,7 +65,7 @@ if (user) {
         <div class="col-md-3">
           <div class="card-counter info">
             <i class="fa fa-users"></i>
-            <span class="count-numbers">35</span>
+            <span class="count-numbers">{{myTransactions?.length}}</span>
             <span class="count-name">Transactions</span>
           </div>
         </div>

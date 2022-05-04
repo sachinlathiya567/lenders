@@ -36,7 +36,6 @@
             "password": "password4"
         }
     ],
-
     "transactions": [
         {
             "id": 1234,
@@ -49,9 +48,21 @@
             "status": "paid"
         },
         {
-            "id": 1234,
-            "lender": 123456,
-            "borrower": "123456",
+            "id": 1235,
+            "lender": {
+                "id": 123456,
+                "name": "Don Joe",
+                "email": "donjoe@mail.com",
+                "phone": "098765432",
+                "password": "password"
+            },
+            "borrower": {
+                "id": 13450,
+                "name": "Don Joe",
+                "email": "simpleuser@mail.com",
+                "phone": "23456876",
+                "password": "password4"
+            },
             "type": "Lends",
             "amount": 1000,
             "date": "",
@@ -59,9 +70,21 @@
             "status": "paid"
         },
         {
-            "id": 1234,
-            "lender": 64545,
-            "borrower": 123456,
+            "id": 1236,
+            "lender": {
+                "id": 9788,
+                "name": "Don Joe",
+                "email": "arya@mail.com",
+                "phone": "0986345623",
+                "password": "password3"
+            },
+            "borrower": {
+                "id": 123456,
+                "name": "Don Joe",
+                "email": "donjoe@mail.com",
+                "phone": "098765432",
+                "password": "password"
+            },
             "type": "Borrows",
             "amount": 500,
             "date": "",

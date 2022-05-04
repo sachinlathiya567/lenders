@@ -11,7 +11,10 @@ const routes = [
     {
         name: "Login",
         path: "/login",
-        component: Login
+        component: Login,
+        meta: {
+            guest: true
+        }
     },
 
     {
