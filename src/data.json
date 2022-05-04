@@ -16,21 +16,21 @@
         },
         {
             "id": 7424,
-            "name": "Don Joe",
+            "name": "Awesome User",
             "email": "june@mail.com",
             "phone": "324354623",
             "password": "password2"
         },
         {
             "id": 9788,
-            "name": "Don Joe",
+            "name": "Another User",
             "email": "arya@mail.com",
             "phone": "0986345623",
             "password": "password3"
         },
         {
             "id": 13450,
-            "name": "Don Joe",
+            "name": "Example User",
             "email": "simpleuser@mail.com",
             "phone": "23456876",
             "password": "password4"
