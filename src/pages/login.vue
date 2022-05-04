@@ -68,6 +68,7 @@ async function login() {
                 aria-describedby="emailHelp"
                 placeholder="Email address"
                 v-model="email"
+                required
               />
             </div>
             <div class="mb-3">
@@ -77,6 +78,7 @@ async function login() {
                 id="password"
                 placeholder="password"
                 v-model="password"
+                required
               />
             </div>
             <div class="text-center">
