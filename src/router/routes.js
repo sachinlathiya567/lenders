@@ -7,6 +7,13 @@ import Fourohfour from "../pages/404.vue"
 
 
 const routes = [
+    {
+        path: "/",
+        redirect: { name:  "Login"},
+        meta: {
+            guest: true
+        }
+    },
 
     {
         name: "Login",

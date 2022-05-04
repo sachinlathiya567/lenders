@@ -29,7 +29,7 @@ async function login() {
     localStorage.setItem("isLoggedIn", JSON.stringify(true));
     localStorage.setItem("authUser", JSON.stringify(user));
     message.value = "";
-    document.location.href = "/#/home/";
+    document.location.href = "/home/";
   } else {
     message.value = "The credentials provided do not match our records";
   }

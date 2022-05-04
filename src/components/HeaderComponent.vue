@@ -10,7 +10,7 @@ if (user) {
 function logout() {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("authUser");
-  document.location.href = "/#/login/";
+  document.location.href = "/login/";
 }
 </script>
 
