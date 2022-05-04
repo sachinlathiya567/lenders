@@ -40,7 +40,7 @@ router.beforeEach((to, from) => {
             return {
                 path: '/home',
             }
-        } 
+        }
     }
 })
 
